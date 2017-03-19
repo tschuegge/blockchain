@@ -1,7 +1,7 @@
 Blockchain Demo
 ===============
 
-Diese Demo zeigt die grundlegende Funktionsweise einer Blockchain: [Demo starten](/build)
+Diese Demo zeigt die grundlegende Funktionsweise einer Blockchain: [Demo starten](./build)
 
 
 Inbetriebnahme
