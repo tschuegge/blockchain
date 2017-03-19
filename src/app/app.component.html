@@ -1,4 +1,17 @@
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><i class="fa fa-cubes" aria-hidden="true"></i> Blockchain Prototype</a>
+    </div>
+    <ul class="nav navbar-nav navbar-left">
+      <li routerLinkActive="active"><a routerLink="/singleblockchain">Single Blockchain</a></li>
+      <li routerLinkActive="active"><a routerLink="/distributedblockchain">Distributed Blockchain</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="navbar-text">© 2017 Jürg Danuser</li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid" style="padding-top: 70px;">
+  <router-outlet></router-outlet>
+</div>

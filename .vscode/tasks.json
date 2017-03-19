@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "isShellCommand": true,
+  "suppressTaskName": true,
+  "tasks": [
+    {
+      "taskName": "Run Development Server",
+      "command": "ng",
+      "args": [
+        "serve"
+      ],
+      "isBackground": true,
+      "echoCommand": true,
+      "showOutput": "always"
+    },
+    {
+      "taskName": "Build Release",
+      "command": "ng",
+      "args": [
+        "build"
+      ],
+      "isBuildCommand": true,
+      "showOutput": "always"
+    },
+    {
+      "taskName": "Run Static Code Analysis",
+      "command": "ng",
+      "args": [
+        "lint"
+      ],
+      "showOutput": "never",
+      "problemMatcher": {
+        "fileLocation": "absolute",
+        "severity": "warning",
+        "pattern": {
+          "regexp": "^(\\S.*)\\[(\\d+), (\\d+)\\]:\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "message": 4
+        }
+      }
+    }
+  ]
+}

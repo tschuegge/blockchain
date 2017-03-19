@@ -1,0 +1,52 @@
+<div class="panel" [ngClass]="{'panel-success': blockchainentry.isValid, 'panel-danger': !blockchainentry.isValid}" style="display: inline-block; width: 500px;">
+  <div class="panel-heading">
+    <a href="" class="pull-right" (click)="onBlockDelete($event)"><i class="fa fa-times"></i></a>
+    <h3 class="panel-title" *ngIf="blockchainentry.isValid">Gültiger Block</h3>
+    <h3 class="panel-title" *ngIf="!blockchainentry.isValid">Ungültiger Block</h3>
+  </div>
+  <div class="panel-body">
+    <form (change)="onBlockChanged($event)" class="form-horizontal">
+      <div class="form-group">
+        <label for="blockno" class="col-sm-4 control-label">Block Nr:</label>
+        <div class="col-sm-8">
+          <input type="number" class="form-control" name="blockno" id="blockno" [(ngModel)]="blockchainentry.block.blockno">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="timestamp" class="col-sm-4 control-label">Timestamp:</label>
+        <div class="col-sm-8">
+          <input type="number" class="form-control" name="timestamp" id="timestamp" [(ngModel)]="blockchainentry.block.timestamp">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="nonce" class="col-sm-4 control-label">Nonce:</label>
+        <div class="col-sm-8">
+          <input type="number" class="form-control" name="nonce" id="nonce" [(ngModel)]="blockchainentry.block.nonce">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="data" class="col-sm-4 control-label">Daten:</label>
+        <div class="col-sm-8">
+          <textarea class="form-control" name="data" id="data" rows="4" [(ngModel)]="blockchainentry.block.data"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="prev" class="col-sm-4 control-label">Vorheriger Block:</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="prev" id="prev" [(ngModel)]="blockchainentry.block.prev">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="hash" class="col-sm-4 control-label">Hash dieses Blocks:</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="hash" id="hash" disabled [(ngModel)]="blockchainentry.hash">
+          <span class="help-block small text-muted">Ein Block ist gültig wenn der Hash mit <em>1234</em> beginnt.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-8">
+          <button type="button" class="btn btn-primary" (click)="doMine()">Mine</button>
+        </div>
+      </div>
+    </form>
+  </div>

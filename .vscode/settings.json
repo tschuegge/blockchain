@@ -1,0 +1,11 @@
+// Platzieren Sie Ihre Einstellungen in dieser Datei, um Standard- und Benutzereinstellungen zu überschreiben.
+{
+  "editor.tabSize": 2, // Falls EditorConfig-Erweiterung nicht installiert wurde
+  "tslint.autoFixOnSave": true, // Beim Speichern alle Codestyle-Regeln anwenden
+  "editor.formatOnSave": true, // Formatiert das Codefile beim Speichern
+  "htmlScss.isAngularProject": true, // Zu Components dazugehörige SASS-Files berücksichtigen
+  "editor.rulers": [ // Keine Zeile sollte länger als 160 Zeichen sein
+    160
+  ],
+  "vsicons.presets.angular": true
+}

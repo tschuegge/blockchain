@@ -1,28 +1,43 @@
-# Blockchain
+Blockchain Demo
+===============
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.2.
+Diese Demo zeigt die grundlegende Funktionsweise einer Blockchain.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Inbetriebnahme
+--------------
 
-## Code scaffolding
+- Aktuellste Version von [VisualStudio Code](http://code.visualstudio.com) als IDE
+- Aktuellste Version von [NodeJS & NPM](http://www.nodejs.org)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+Folgende NPM Pakete werden global benötigt (unter MacOS/Linux mit Superuserrechten `sudo`):
+- Angular CLI (für alle "ng" Befehle): `npm install -g @angular/cli`
+- Typescript für TSLint (nicht fürs Builden, dies wird über die Angular CLI erledigt): `npm install -g typescript`
+- TSLint (für das überprüfen der Syntax und wird von der TSLint-Extension in VSCode benötigt): `npm install -g tslint`
 
-## Build
+Lokale NPM Pakete installieren:
+- Die lokalen Pakete werden aus *package.json* gelesen und können mit folgendem Befehl installiert werden: `npm install` (im Projektverzeichnis)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+Debuggen
+--------
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Zum Debuggen muss zuerst ein lokaler Webserver startet werden, dieser kann direkt im Command Prompt oder in VSCode als Task gestartet werden.
+Danach kann Chrome über die hinterlegte Startkonfiguration gestartet werden.
 
-## Running end-to-end tests
+Starten des Entwicklungsservers über das Command Prompt: `ng serve` (im Projektverzeichnis)
+Starten des Entwicklungsserver innerhalb von VSCode: `task Run Development Server`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
 
-## Further help
+Release builden
+---------------
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Buildtask in VSCode ausführen oder über das Command Prompt: `ng build` (im Projektverzeichnis)
+
+
+Statische Code Analyse
+----------------------
+
+Statische Codeanalysen werden über in VisualStudio Code direkt über Plugin *TSLint* während des schreibens durchgeführt und beim Speichern werden alle
+automatisch behebbaren Probleme (wie fehlende oder überschüssige Leerzeichen) korrigiert.
+Wenn das gesamte Projekt geprüft werden möchte kann in VisualStudio Code `task Run Static Code Analysis` ausgeführt werden,  oder im Command Prompt `ng lint` (im Projektverzeichnis)

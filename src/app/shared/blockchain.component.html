@@ -1,0 +1,13 @@
+<h3>Blockchain<span *ngIf="name">: {{name}}</span>&nbsp;&nbsp;&nbsp;
+  <small *ngIf="isValid" class="text-success"><i class="fa fa-check"></i> gültig</small>
+  <small *ngIf="!isValid" class="text-danger"><i class="fa fa-times"></i> ungültig</small>
+</h3>
+<div *ngFor="let message of messages">
+  <alert [type]="message.type" [dismissOnTimeout]="5000">{{message.text}}</alert>
+</div>
+<div class="blockchainwrapper">
+  <div [style.width.px]="blockCount * (500+10) + 250">
+    <app-block *ngFor="let entry of entries" [blockchainentry]="entry" (change)="changeBlock($event)" (delete)="removeBlock($event)"></app-block>
+    <button type="button" class="btn btn-primary" (click)="addBlock()"><i class="fa fa-plus"></i> Neuen Block hinzufügen</button>
+  </div>
+</div>
