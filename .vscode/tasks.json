@@ -17,9 +17,25 @@
       "taskName": "Build Release",
       "command": "ng",
       "args": [
-        "build"
+        "build",
+        "--prod",
+        "--aot"
       ],
       "isBuildCommand": true,
+      "showOutput": "always"
+    },
+    {
+      "taskName": "Build Release for GitHub",
+      "command": "ng",
+      "args": [
+        "build",
+        "--prod",
+        "--aot",
+        "--base-href",
+        "/blockchain/build/",
+        "--output-path",
+        "build"
+      ],
       "showOutput": "always"
     },
     {
